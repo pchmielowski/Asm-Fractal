@@ -12,28 +12,26 @@ main:
 	mov	rbp, rsp
 	.cfi_def_cfa_register 6
 	sub	rsp, 16
-	mov	ebx, 0
+	mov	bh, 0
 
 .lines:
-	push	rbx
-	mov	ebx, 0
+	mov	bl, 0
 	
 .line:
-	cmp	ebx, 10
+	cmp	bl, 10
 	mov	edi, 35 # pound
 	jge	.pound
 	mov	edi, 32
 .pound:
 	call	putchar
-	inc	ebx
-	cmp	ebx, 120 # columns
+	inc	bl
+	cmp	bl, 120 # columns
 	jle	.line
 
 	mov	edi, 10
 	call	putchar
-	pop	rbx
-	inc	ebx
-	cmp	ebx, 40 # rows
+	inc	bh
+	cmp	bh, 40 # rows
 	jle	.lines
 	
 
