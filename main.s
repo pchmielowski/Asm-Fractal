@@ -18,7 +18,7 @@ main:
 	mov	bl, 0
 	
 .line:
-	cmp	bl, 10
+	cmp	bl, bh
 	mov	edi, 35 # pound
 	jge	.pound
 	mov	edi, 32
