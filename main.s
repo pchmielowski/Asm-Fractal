@@ -18,7 +18,9 @@ main:
 	mov	bl, 0
 	
 .line:
-	cmp	bl, bh
+	movzx	eax, bl # move to larger registers
+	movzx	ecx, bh
+	cmp	eax, ecx
 	mov	edi, 35 # pound
 	jge	.pound
 	mov	edi, 32
